@@ -136,6 +136,22 @@ def largest_negative_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
+    max = None
+    for k in range(len(seq_seq)):
+        s = seq_seq[k]
+        for j in range(len(s)):
+            if type(s[j]) is int:
+                max = s[j]
+                break
+    if type(max) is not int:
+        return None
+    else:
+        for k in range(len(seq_seq)):
+            s = seq_seq[k]
+            for j in range(len(s)):
+                if s[j] > max:
+                    max = s[j]
+        return max
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
