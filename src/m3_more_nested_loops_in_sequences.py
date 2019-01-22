@@ -417,8 +417,16 @@ def first_is_elsewhere_too(seq_seq):
       :type seq_seq: (list, tuple)
     and the given argument is a sequence of sequences.
     """
+    s = seq_seq[0]
+    for k in range(len(seq_seq) - 1):
+        a = seq_seq[k + 1]
+        for j in range(len(s)):
+            for h in range(len(a)):
+                if s[j] == a[h]:
+                    return True
+    return False
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
